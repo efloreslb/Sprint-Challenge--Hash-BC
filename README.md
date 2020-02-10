@@ -24,11 +24,19 @@ This sprint challenge is divided up into three parts:  Hash tables coding, block
 
 Explain in detail the workings of a dynamic array:
 * What is the runtime complexity to access an array, add or remove from the front, and add or remove from the back?
+   - Accessing an array has a runtime compelxity of O(1) as long as you use it's index.
+   - Adding and removing from the front of an array has a varying time complexity. The worst case scenario is O(n) due to all elements after the first element will have to be shifted.
+   - Adding or removing from the back of an array also has a varying time complexity. The worst case scenario is O(n) due to the possibility of all elements having to be copied to a new array when the current array is full.
 * What is the worse case scenario if you try to extend the storage size of a dynamic array?
+   - Extending the size of a dynamic array will be O(n) because every element in the array will have to be copied.
 
 Explain how a blockchain is structured. What are the blocks, what is the chain? How is the data organized?
+   - Blockchain is a set of objects where each object can essentially vouch for the the previous object in the chain by including data only attainable by performing a required algorithm. This also means that the last current block includes data that has been dependent on each block that preceded it. 
+   - Blocks contain verious idenfying data but they must contain a proof of work, hash for all of it's information, the hash of the previous block, and a list of transactions.
+   - The chain links all these blocks together by each block having the hash of the block that came before it. 
  
 Explain how proof of work functions. How does it operate. How does this protect the chain from attack. What kind of attack is possible?
+   - Proof of work is given by a block after it computes a complicated algorithm and it is checked by the last block in the chain. If that proof of work is validated then the block is added to the chain as it's last block. Other blocks that may have been trying to compute the same algorithm for that previous last block will not be validated because there is a new block at the end. This protects the chain because it requires large amounts of computing power to mine new blocks. One possible attack is a 51% attack (majority attack) where a user(s) can own majority of the computing power and therefore create the longest chain of blocks. However, once the attack is discovered it is not profitable for attackers since the blockchain will lose it's credibility.
 
 ## Project Set Up
 
